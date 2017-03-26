@@ -21,7 +21,7 @@ module.exports = function(RED) {
             {
                 if ('nodeId' in msg) {
                     pl = msg.nodeId+";"+msg.childSensorId+";"+msg.messageType+";"+msg.ack+";"+msg.subType+";"+msg.payload;
-                    msg = {payload:pl};
+                    msg.payload = pl
                 }
             }
             node.send(msg);
